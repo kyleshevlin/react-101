@@ -1,0 +1,75 @@
+{
+  "name": "react-101",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:kyleshevlin/react-101.git",
+    "type": "git"
+  },
+  "author": "Kyle Shevlin <kyle.a.shevlin@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "webpack -d --env.dev",
+    "format": "prettier --write --no-semi --single-quote --print-width=100 --parser=flow --tab-width=2 \"src/js/**/*.{js,jsx}\"",
+    "lint": "eslint **/*.{js,jsx} --quiet",
+    "start": "webpack-dev-server --env.dev --hot"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "jest-serializer-enzyme"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.28.4",
+    "enzyme": "^3.1.0",
+    "eslint": "^4.4.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-flowtype": "^2.35.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^7.1.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "flow-bin": "^0.56.0",
+    "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "prettier": "^1.5.3",
+    "react-test-renderer": "^16.0.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0"
+  }
+}
