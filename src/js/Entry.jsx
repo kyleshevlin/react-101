@@ -4,16 +4,25 @@ import ReactDOM from 'react-dom'
 import '../scss/app.scss'
 
 /*
-Before there was JSX, there was/is React.createElement(). This method is the foundation of React.
+In this example, we take React.createElement a bit further and build a small UI.
 
-The reason we start here is so that we clearly understand that React components are functions,
-and a React app is just a composition of functions all the way down.
+Since we use the method so often, we assign to a shorter alias `ce`.
 
-React.createElement takes three arguments, a HTML element type, a props object,
-and then any number of children. We can return a string like we are here,
-or an array of nested createElement calls.
+We can easily see how our applications are built out of functions. We'll see
+how we can take this a step further in the next commit.
 */
 
-const ourFirstComponent = React.createElement('h1', null, 'React 101')
+const ce = React.createElement
 
-ReactDOM.render(ourFirstComponent, document.getElementById('app'))
+const ourFirstBasicApp = (
+  ce('div', { className: 'wrap' }, [
+    ce('h1', null, 'React 101'),
+    ce('h2', null, 'by Kyle Shevlin'),
+    ce('article', { className: 'article' }, [
+      ce('p', null, 'How excited are you to be learning React?!'),
+      ce('p', null, 'I know I am excited to be teaching it!')
+    ])
+  ])
+)
+
+ReactDOM.render(ourFirstBasicApp, document.getElementById('app'))
