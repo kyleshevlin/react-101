@@ -1,18 +1,15 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import store from '../store'
-import Aux from './Aux'
-import ErrorBoundary from './ErrorBoundary'
-import Greeting from './Greeting'
+import MyStatelessFunctionalComponent from './MyStatelessFunctionalComponent'
+
+// Our App component is a simple stateless functional component (abbreviated to SFC).
+// As you can see, our component is a function. This one happens to take no
+// arguments, and simply returns the markup of the component. In this case,
+// we are only returning a wrapping div and a child component that takes a few props
 
 const App = () => (
-  <Provider store={store}>
-    <Aux>
-      <ErrorBoundary>
-        <Greeting message="Greetings from React 101!" />
-      </ErrorBoundary>
-    </Aux>
-  </Provider>
+  <div className="wrap">
+    <MyStatelessFunctionalComponent name='Kyle' age={32} />
+  </div>
 )
 
 export default App
