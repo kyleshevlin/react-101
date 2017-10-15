@@ -1,14 +1,16 @@
 import React from 'react'
-import MyStatelessFunctionalComponent from './MyStatelessFunctionalComponent'
+import MyStatefulComponent from './MyStatefulComponent'
 
-// Our App component is a simple stateless functional component (abbreviated to SFC).
-// As you can see, our component is a function. This one happens to take no
-// arguments, and simply returns the markup of the component. In this case,
-// we are only returning a wrapping div and a child component that takes a few props
+// Notice that we have rendered multiple copies of our stateful component.
+// Each of these components is its own instance. Its state is not shared
+// among the other copies. This makes our components highly reusable
+// without any fear of unwanted side effects.
 
 const App = () => (
   <div className="wrap">
-    <MyStatelessFunctionalComponent name='Kyle' age={32} />
+    <MyStatefulComponent value={0} />
+    <MyStatefulComponent value={10} />
+    <MyStatefulComponent value={20} />
   </div>
 )
 
