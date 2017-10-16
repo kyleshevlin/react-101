@@ -1,11 +1,9 @@
 import React from 'react'
-import MyStatefulComponent from './MyStatefulComponent'
+import MouseMovement from './MouseMovement'
 
 const App = () => (
   <div className="wrap">
-    <MyStatefulComponent value={0} />
-    <MyStatefulComponent value={10} />
-    <MyStatefulComponent value={20} />
+    <MouseMovement />
   </div>
 )
 
