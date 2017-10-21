@@ -1,9 +1,9 @@
 import React from 'react'
-import MouseMovement from './MouseMovement'
+import MyFirstRef from './MyFirstRef'
 
 const App = () => (
   <div className="wrap">
-    <MouseMovement />
+    <MyFirstRef />
   </div>
 )
 
