@@ -49,6 +49,7 @@ class MyFirstRef extends Component {
   }
 
   handleClick = () => {
+    console.log('clicked')
     this.setState(prevState => ({
       times: prevState.times + 1
     }))

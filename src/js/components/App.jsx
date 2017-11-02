@@ -1,9 +1,9 @@
 import React from 'react'
-import MyFirstRef from './MyFirstRef'
+import GithubContainer from './GithubContainer'
 
 const App = () => (
   <div className="wrap">
-    <MyFirstRef />
+    <GithubContainer />
   </div>
 )
 
