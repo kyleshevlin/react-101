@@ -1,10 +1,14 @@
 import React from 'react'
-import GithubContainer from './GithubContainer'
+import { Provider } from 'react-redux'
+import store from '../store'
+import GithubContainer from '../containers/GithubContainer'
 
 const App = () => (
-  <div className="wrap">
-    <GithubContainer />
-  </div>
+  <Provider store={store}>
+    <div className="wrap">
+      <GithubContainer />
+    </div>
+  </Provider>
 )
 
 export default App
