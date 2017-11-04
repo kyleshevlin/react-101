@@ -18,7 +18,10 @@
     "start": "webpack-dev-server --env.dev --hot"
   },
   "jest": {
-    "setupFiles": ["./src/js/shim.js", "./src/js/setupTests.js"],
+    "setupFiles": [
+      "./src/js/shim.js",
+      "./src/js/setupTests.js"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
@@ -34,7 +37,7 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "classnames": "^2.2.5",

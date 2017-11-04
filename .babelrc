@@ -8,5 +8,5 @@
     "transform-class-properties",
     "transform-object-rest-spread"
   ],
-  "presets": ["es2015", "react", "flow"]
+  "presets": ["env", "react", "flow"]
 }
