@@ -5,9 +5,11 @@ import { fetchUserProfile } from '../actions'
 import GithubProfile from '../components/GithubProfile'
 import LoadingSpinner from '../components/LoadingSpinner'
 
-class GithubContainer extends Component {
+class GithubProfileContainer extends Component {
   componentDidMount() {
-    this.props.fetchUserProfile('kyleshevlin')
+    if (!this.props.user) {
+      this.props.fetchUserProfile('kyleshevlin')
+    }
   }
 
   render() {
@@ -25,7 +27,7 @@ class GithubContainer extends Component {
   }
 }
 
-GithubContainer.propTypes = {
+GithubProfileContainer.propTypes = {
   isLoading: PropTypes.bool.isRequired,
   user: PropTypes.shape({
     login: PropTypes.string,
@@ -33,7 +35,7 @@ GithubContainer.propTypes = {
     url: PropTypes.string,
     bio: PropTypes.string,
     repos: PropTypes.arrayOf(PropTypes.string)
-  }).isRequired,
+  }),
   hasUserError: PropTypes.bool.isRequired,
   userError: PropTypes.shape({
     message: PropTypes.string
@@ -41,8 +43,9 @@ GithubContainer.propTypes = {
   fetchUserProfile: PropTypes.func.isRequired
 }
 
-GithubContainer.defaultProps = {
-  userError: null
+GithubProfileContainer.defaultProps = {
+  userError: null,
+  user: null
 }
 
 const mapStateToProps = state => ({
@@ -56,4 +59,6 @@ const mapDispatchToProps = {
   fetchUserProfile
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(GithubContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(
+  GithubProfileContainer
+)

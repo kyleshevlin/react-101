@@ -1,12 +1,12 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import store from '../store'
-import GithubContainer from '../containers/GithubContainer'
+import GithubProfileContainer from '../containers/GithubProfileContainer'
 
 const App = () => (
   <Provider store={store}>
     <div className="wrap">
-      <GithubContainer />
+      <GithubProfileContainer />
     </div>
   </Provider>
 )

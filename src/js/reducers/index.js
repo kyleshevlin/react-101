@@ -1,18 +1,13 @@
 import * as types from '../constants/actionTypes'
 
 const initialState = {
-  waitingForUser: false,
   hasUserError: false,
   hasReposError: false,
   reposError: null,
-  user: {
-    login: '',
-    name: '',
-    url: '',
-    bio: '',
-    repos: []
-  },
-  userError: null
+  user: null,
+  userError: null,
+  waitingForUser: false,
+  waitingForRepos: false
 }
 
 const reducer = (state = initialState, action) => {

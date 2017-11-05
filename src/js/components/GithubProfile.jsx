@@ -1,59 +1,30 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
+import GithubReposContainer from '../containers/GithubReposContainer'
 
-class GithubProfile extends Component {
-  state = {
-    isVisible: true
-  }
-
-  handleClick = () => {
-    this.setState({ isVisible: !this.state.isVisible })
-  }
-
-  render() {
-    const { login, name, url, bio, repos } = this.props.data
-
-    return (
-      <div className="github_profile">
-        <div className="github_profile-name">
-          <a href={url}>{name}</a>
-        </div>
-        <div className="github_profile-login">{login}</div>
-        <div className="github_profile-bio">{bio}</div>
-        <div className="github_profile-repos">
-          {repos.length ? (
-            <div>
-              <button onClick={this.handleClick}>Toggle</button>
-
-              {this.state.isVisible && (
-                <ol className="github_profile-repos-list">
-                  {repos.map(repo => (
-                    <li key={repo} className="github_profile-repos-list-item">
-                      {repo}
-                    </li>
-                  ))}
-                </ol>
-              )}
-            </div>
-          ) : (
-            <div className="github_profile-repos-empty">
-              <p>No repos were found.</p>
-            </div>
-          )}
-        </div>
+const GithubProfile = ({ data }) =>
+  data ? (
+    <div className="github_profile">
+      <div className="github_profile-name">
+        <a href={data.url}>{data.name}</a>
       </div>
-    )
-  }
-}
+      <div className="github_profile-login">{data.login}</div>
+      <div className="github_profile-bio">{data.bio}</div>
+      <GithubReposContainer />
+    </div>
+  ) : null
 
 GithubProfile.propTypes = {
   data: PropTypes.shape({
     login: PropTypes.string,
     name: PropTypes.string,
     url: PropTypes.string,
-    bio: PropTypes.string,
-    repos: PropTypes.arrayOf(PropTypes.string)
-  }).isRequired
+    bio: PropTypes.string
+  })
+}
+
+GithubProfile.defaultProps = {
+  data: null
 }
 
 export default GithubProfile

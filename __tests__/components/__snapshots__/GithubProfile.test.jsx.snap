@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GithubProfile should be empty with no data 1`] = `""`;
+
+exports[`GithubProfile should display UI with data 1`] = `
+<div
+  className="github_profile"
+>
+  <div
+    className="github_profile-name"
+  >
+    <a
+      href="foo.com"
+    >
+      Kyle
+    </a>
+  </div>
+  <div
+    className="github_profile-login"
+  >
+    kyle
+  </div>
+  <div
+    className="github_profile-bio"
+  >
+    Cool bio!
+  </div>
+  <Connect(GithubReposContainer) />
+</div>
+`;

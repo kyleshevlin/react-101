@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GithubProfileRepos should list repos given to it 1`] = `
+<div
+  className="github_profile-repos"
+>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      Toggle
+    </button>
+    <ol
+      className="github_profile-repos-list"
+    >
+      <li
+        className="github_profile-repos-list-item"
+        key="foo"
+      >
+        foo
+      </li>
+      <li
+        className="github_profile-repos-list-item"
+        key="bar"
+      >
+        bar
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
+exports[`GithubProfileRepos should render empty state if no repos 1`] = `
+<div
+  className="github_profile-repos"
+>
+  <div
+    className="github_profile-repos-empty"
+  >
+    <p>
+      No repos were found.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`GithubProfileRepos should toggle repos visibility if toggle is clicked 1`] = `
+<div
+  className="github_profile-repos"
+>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      Toggle
+    </button>
+    <ol
+      className="github_profile-repos-list"
+    >
+      <li
+        className="github_profile-repos-list-item"
+        key="foo"
+      >
+        foo
+      </li>
+      <li
+        className="github_profile-repos-list-item"
+        key="bar"
+      >
+        bar
+      </li>
+    </ol>
+  </div>
+</div>
+`;
+
+exports[`GithubProfileRepos should toggle repos visibility if toggle is clicked 2`] = `
+<div
+  className="github_profile-repos"
+>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      Toggle
+    </button>
+  </div>
+</div>
+`;
+
+exports[`GithubProfileRepos should toggle repos visibility if toggle is clicked 3`] = `
+<div
+  className="github_profile-repos"
+>
+  <div>
+    <button
+      onClick={[Function]}
+    >
+      Toggle
+    </button>
+    <ol
+      className="github_profile-repos-list"
+    >
+      <li
+        className="github_profile-repos-list-item"
+        key="foo"
+      >
+        foo
+      </li>
+      <li
+        className="github_profile-repos-list-item"
+        key="bar"
+      >
+        bar
+      </li>
+    </ol>
+  </div>
+</div>
+`;

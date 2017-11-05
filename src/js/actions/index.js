@@ -22,6 +22,23 @@ export function receiveUserProfileFail(error) {
   }
 }
 
+export function fetchUserProfile(username) {
+  return dispatch => {
+    dispatch(requestUserProfile(username))
+
+    axios.get(`https://api.github.com/users/${username}`).then(
+      response => {
+        dispatch(receiveUserProfileSuccess({ ...response.data, repos: [] }))
+
+        return response.data
+      },
+      error => {
+        dispatch(receiveUserProfileFail(error))
+      }
+    )
+  }
+}
+
 export function requestUserRepos() {
   return {
     type: types.REQUEST_USER_REPOS
@@ -56,30 +73,5 @@ export function fetchUserRepos(url) {
         dispatch(receiveUserReposFail(error))
       }
     )
-  }
-}
-
-export function fetchUserProfile(username) {
-  return dispatch => {
-    dispatch(requestUserProfile(username))
-
-    axios
-      .get(`https://api.github.com/users/${username}`)
-      .then(
-        response => {
-          dispatch(receiveUserProfileSuccess({ ...response.data, repos: [] }))
-
-          return response.data
-        },
-        error => {
-          dispatch(receiveUserProfileFail(error))
-        }
-      )
-      .then(data => {
-        dispatch(fetchUserRepos(data.repos_url))
-      })
-      .catch(err => {
-        dispatch(receiveUserProfileFail(err))
-      })
   }
 }
