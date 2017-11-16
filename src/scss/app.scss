@@ -2,11 +2,7 @@
 // Import All The Things
 ////////////////////////////////////////
 
-body {
-  padding: 0;
-  margin: 0;
-}
-
-.wrap {
-  padding: 30px;
-}
+@import
+  'setups/normalize',
+  'globals/tags'
+;

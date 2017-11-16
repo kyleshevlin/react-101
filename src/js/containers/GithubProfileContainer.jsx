@@ -19,11 +19,7 @@ class GithubProfileContainer extends Component {
       return <LoadingSpinner />
     }
 
-    return hasUserError ? (
-      <p>{userError.message}</p>
-    ) : (
-      <GithubProfile data={user} />
-    )
+    return hasUserError ? <p>{userError.message}</p> : <GithubProfile data={user} />
   }
 }
 
@@ -32,7 +28,7 @@ GithubProfileContainer.propTypes = {
   user: PropTypes.shape({
     login: PropTypes.string,
     name: PropTypes.string,
-    url: PropTypes.string,
+    html_url: PropTypes.string,
     bio: PropTypes.string,
     repos: PropTypes.arrayOf(PropTypes.string)
   }),
@@ -59,6 +55,4 @@ const mapDispatchToProps = {
   fetchUserProfile
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(
-  GithubProfileContainer
-)
+export default connect(mapStateToProps, mapDispatchToProps)(GithubProfileContainer)

@@ -1,5 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import bs from '../utils'
+
+const Button = styled.button`
+  display: inline-block;
+  background-color: teal;
+  color: white;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: ${bs()};
+  cursor: pointer;
+`
 
 class GithubProfileRepos extends Component {
   state = {
@@ -17,7 +30,7 @@ class GithubProfileRepos extends Component {
       <div className="github_profile-repos">
         {repos.length ? (
           <div>
-            <button onClick={this.handleClick}>Toggle</button>
+            <Button onClick={this.handleClick}>Toggle</Button>
 
             {this.state.isVisible && (
               <ol className="github_profile-repos-list">
