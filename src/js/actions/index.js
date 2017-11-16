@@ -23,19 +23,20 @@ export function receiveUserProfileFail(error) {
 }
 
 export function fetchUserProfile(username) {
-  return dispatch => {
+  return async dispatch => {
+    let response
+
     dispatch(requestUserProfile(username))
 
-    axios.get(`https://api.github.com/users/${username}`).then(
-      response => {
-        dispatch(receiveUserProfileSuccess({ ...response.data, repos: [] }))
+    try {
+      response = await axios.get(`https://api.github.com/users/${username}`)
+    } catch (error) {
+      dispatch(receiveUserProfileFail(error))
+    }
 
-        return response.data
-      },
-      error => {
-        dispatch(receiveUserProfileFail(error))
-      }
-    )
+    if (response) {
+      dispatch(receiveUserProfileSuccess({ ...response.data, repos: [] }))
+    }
   }
 }
 
@@ -60,18 +61,20 @@ export function receiveUserReposFail(error) {
 }
 
 export function fetchUserRepos(url) {
-  return dispatch => {
+  return async dispatch => {
+    let response
+
     dispatch(requestUserRepos())
 
-    axios.get(url).then(
-      response => {
-        const repos = response.data.map(repo => repo.full_name)
+    try {
+      response = await axios.get(url)
+    } catch (error) {
+      dispatch(receiveUserReposFail(error))
+    }
 
-        dispatch(receiveUserReposSuccess(repos))
-      },
-      error => {
-        dispatch(receiveUserReposFail(error))
-      }
-    )
+    if (response) {
+      const repos = response.data.map(repo => repo.full_name)
+      dispatch(receiveUserReposSuccess(repos))
+    }
   }
 }
