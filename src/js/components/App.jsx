@@ -3,7 +3,9 @@ import { Provider } from 'react-redux'
 import styled from 'styled-components'
 import bs from '../utils'
 import store from '../store'
-import GithubProfileContainer from '../containers/GithubProfileContainer'
+// import GithubProfileContainer from '../containers/GithubProfileContainer'
+import User from './User'
+import { withKyle } from '../hocs'
 
 const Container = styled.div`
   width: 75%;
@@ -13,10 +15,12 @@ const Container = styled.div`
   margin-right: auto;
 `
 
+const Kyle = withKyle(User)
+
 const App = () => (
   <Provider store={store}>
     <Container>
-      <GithubProfileContainer />
+      <Kyle />
     </Container>
   </Provider>
 )
